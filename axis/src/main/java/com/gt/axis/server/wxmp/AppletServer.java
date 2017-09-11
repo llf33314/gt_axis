@@ -36,12 +36,12 @@ public class AppletServer {
         Map<String, Object> resMap = HttpClienUtils.reqPostUTF8(messsageJson, url, Map.class, AxisContent.getInstance().getWxmpSignKey());
         int code = (int) resMap.get("code");
         String msg = resMap.get("msg").toString();
-        if (resMap.get("data") == null){
-
+        WxPublicUser wxPublicUser = null;
+        if (resMap.get("data") != null){
+            String json = resMap.get("data").toString();
+            logger.debug("provinces --> " + json);
+            wxPublicUser = JSON.parseObject(json, WxPublicUser.class);
         }
-        String json = resMap.get("data").toString();
-        logger.debug("provinces --> " + json);
-        WxPublicUser wxPublicUser = JSON.parseObject(json, WxPublicUser.class);
         AxisResult<WxPublicUser> axisResult = AxisResult.create(code, msg, wxPublicUser);
         return axisResult;
     }
@@ -61,12 +61,12 @@ public class AppletServer {
         Map<String, Object> resMap = HttpClienUtils.reqPostUTF8(messsageJson, url, Map.class, AxisContent.getInstance().getWxmpSignKey());
         int code = (int) resMap.get("code");
         String msg = resMap.get("msg").toString();
-        if (resMap.get("data") == null){
-
+        WxPublicUser wxPublicUser = null;
+        if (resMap.get("data") != null){
+            String json = resMap.get("data").toString();
+            logger.debug("provinces --> " + json);
+            wxPublicUser = JSON.parseObject(json, WxPublicUser.class);
         }
-        String json = resMap.get("data").toString();
-        logger.debug("provinces --> " + json);
-        WxPublicUser wxPublicUser = JSON.parseObject(json, WxPublicUser.class);
         AxisResult<WxPublicUser> axisResult = AxisResult.create(code, msg, wxPublicUser);
         return axisResult;
     }
@@ -87,7 +87,7 @@ public class AppletServer {
         int code = (int) resMap.get("code");
         String msg = resMap.get("msg").toString();
         WxPublicUser wxPublicUser = null;
-        if (resMap.get("data") == null){
+        if (resMap.get("data") != null){
             String json = resMap.get("data").toString();
             logger.debug("provinces --> " + json);
              wxPublicUser = JSON.parseObject(json, WxPublicUser.class);
