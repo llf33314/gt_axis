@@ -1,7 +1,7 @@
 package com.gt.axis.bean.wxmp.shop;
 
 /**
- * 门店返回对象
+ * 门店图片列表
  * Created by psr on 2017/9/11 0011.
  */
 public class WsShopPhoto {
@@ -12,36 +12,36 @@ public class WsShopPhoto {
 
     private Integer busId;//商家ID
 
+
+    public String getLocalAddress() {
+        return localAddress;
+    }
+
+    public String getWxAddress() {
+        return wxAddress;
+    }
+
+    public Integer getBusId() {
+        return busId;
+    }
     /**
      * 服务器图片url
      * @return
      */
-    public String getLocalAddress() {
-        return localAddress;
+    public void setLocalAddress(String localAddress) {
+        this.localAddress = localAddress;
     }
     /**
      * 微信url
      * @return
      */
-    public String getWxAddress() {
-        return wxAddress;
+    public void setWxAddress(String wxAddress) {
+        this.wxAddress = wxAddress;
     }
     /**
      * 商家ID
      * @return
      */
-    public Integer getBusId() {
-        return busId;
-    }
-
-    public void setLocalAddress(String localAddress) {
-        this.localAddress = localAddress;
-    }
-
-    public void setWxAddress(String wxAddress) {
-        this.wxAddress = wxAddress;
-    }
-
     public void setBusId(Integer busId) {
         this.busId = busId;
     }

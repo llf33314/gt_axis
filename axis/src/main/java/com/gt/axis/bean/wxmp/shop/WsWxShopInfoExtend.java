@@ -3,7 +3,7 @@ package com.gt.axis.bean.wxmp.shop;
 import org.omg.PortableInterceptor.INACTIVE;
 
 /**
- * 门店返回对象
+ * 获取所有门店
  * Created by psr on 2017/9/11 0011.
  */
 public class WsWxShopInfoExtend {
@@ -62,300 +62,300 @@ public class WsWxShopInfoExtend {
 
     private String imageUrl;//第一张图片
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public String getPoiid() {
+        return poiid;
+    }
+
+    public Integer getBusId() {
+        return busId;
+    }
+
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public String getCategories() {
+        return categories;
+    }
+
+    public String getTwoCategories() {
+        return twoCategories;
+    }
+
+    public String getThreeCategories() {
+        return threeCategories;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public Integer getAvgPrice() {
+        return avgPrice;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public String getSpecial() {
+        return special;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public String getRecommend() {
+        return recommend;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public Integer getOffsetType() {
+        return offsetType;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public Integer getMainShop() {
+        return mainShop;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
     /**
      * id
      * @return
      */
-    public Integer getId() {
-        return id;
+    public void setId(Integer id) {
+        this.id = id;
     }
     /**
      * 多粉内部ID
      * @return
      */
-    public String getSid() {
-        return sid;
+    public void setSid(String sid) {
+        this.sid = sid;
     }
     /**
      * 微信的门店
      * @return
      */
-    public String getPoiid() {
-        return poiid;
+    public void setPoiid(String poiid) {
+        this.poiid = poiid;
     }
     /**
      * 商家id
      * @return
      */
-    public Integer getBusId() {
-        return busId;
+    public void setBusId(Integer busId) {
+        this.busId = busId;
     }
     /**
      * 门店名
      * @return
      */
-    public String getBusinessName() {
-        return businessName;
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
     }
     /**
      * 分店名
      * @return
      */
-    public String getBranchName() {
-        return branchName;
+    public void setBranchName(String branchName) {
+        this.branchName = branchName;
     }
     /**
      * 门店类型主类型
      * @return
      */
-    public String getCategories() {
-        return categories;
+    public void setCategories(String categories) {
+        this.categories = categories;
     }
     /**
      * 二级类目
      * @return
      */
-    public String getTwoCategories() {
-        return twoCategories;
+    public void setTwoCategories(String twoCategories) {
+        this.twoCategories = twoCategories;
     }
     /**
      * 三级类目
      * @return
      */
-    public String getThreeCategories() {
-        return threeCategories;
+    public void setThreeCategories(String threeCategories) {
+        this.threeCategories = threeCategories;
     }
     /**
      * 电话(固定电话需加区号；区号、分机号均用“-”连接)
      * @return
      */
-    public String getTelephone() {
-        return telephone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
     /**
      * 人均价格(大于零的整数，须如实填写，默认单位为人民币)
      * @return
      */
-    public Integer getAvgPrice() {
-        return avgPrice;
+    public void setAvgPrice(Integer avgPrice) {
+        this.avgPrice = avgPrice;
     }
     /**
      * 开始营业时间
      * @return
      */
-    public String getStartTime() {
-        return startTime;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
     /**
      * 关门时间
      * @return
      */
-    public String getEndTime() {
-        return endTime;
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
     /**
      * 特色服务
      * @return
      */
-    public String getSpecial() {
-        return special;
+    public void setSpecial(String special) {
+        this.special = special;
     }
     /**
      * 简介
      * @return
      */
-    public String getIntroduction() {
-        return introduction;
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
     }
     /**
      * 推荐品
      * @return
      */
-    public String getRecommend() {
-        return recommend;
+    public void setRecommend(String recommend) {
+        this.recommend = recommend;
     }
     /**
      * 门店所在的省份
      * @return
      */
-    public String getProvince() {
-        return province;
+    public void setProvince(String province) {
+        this.province = province;
     }
     /**
      * 城市
      * @return
      */
-    public String getCity() {
-        return city;
+    public void setCity(String city) {
+        this.city = city;
     }
     /**
      * 地区
      * @return
      */
-    public String getDistrict() {
-        return district;
+    public void setDistrict(String district) {
+        this.district = district;
     }
     /**
      * 详细街道地址
      * @return
      */
-    public String getAddress() {
-        return address;
+    public void setAddress(String address) {
+        this.address = address;
     }
     /**
      * 坐标类型(1 为火星坐标（目前只能选1）)
      * @return
      */
-    public Integer getOffsetType() {
-        return offsetType;
+    public void setOffsetType(Integer offsetType) {
+        this.offsetType = offsetType;
     }
     /**
      * 经度
      * @return
      */
-    public String getLongitude() {
-        return longitude;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
     /**
      * 纬度
      * @return
      */
-    public String getLatitude() {
-        return latitude;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
     /**
      * 0：表示还没将门店信息发送到公众号审核，可修改全部内容；1：表示已发送给微信公众号审核  2 已审核通过 3审核通过后重新审核服务信息 4 送审被失败
      * @return
      */
-    public Integer getStatus() {
-        return status;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
     /**
      * 单位信息
      * @return
      */
-    public String getDetail() {
-        return detail;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
     /**
      *主店1：表示主店
      * @return
      */
-    public Integer getMainShop() {
-        return mainShop;
+    public void setMainShop(Integer mainShop) {
+        this.mainShop = mainShop;
     }
     /**
      *第一张图片
      * @return
      */
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setSid(String sid) {
-        this.sid = sid;
-    }
-
-    public void setPoiid(String poiid) {
-        this.poiid = poiid;
-    }
-
-    public void setBusId(Integer busId) {
-        this.busId = busId;
-    }
-
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
-    }
-
-    public void setBranchName(String branchName) {
-        this.branchName = branchName;
-    }
-
-    public void setCategories(String categories) {
-        this.categories = categories;
-    }
-
-    public void setTwoCategories(String twoCategories) {
-        this.twoCategories = twoCategories;
-    }
-
-    public void setThreeCategories(String threeCategories) {
-        this.threeCategories = threeCategories;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public void setAvgPrice(Integer avgPrice) {
-        this.avgPrice = avgPrice;
-    }
-
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public void setSpecial(String special) {
-        this.special = special;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
-    public void setRecommend(String recommend) {
-        this.recommend = recommend;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setOffsetType(Integer offsetType) {
-        this.offsetType = offsetType;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
-    public void setMainShop(Integer mainShop) {
-        this.mainShop = mainShop;
-    }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }

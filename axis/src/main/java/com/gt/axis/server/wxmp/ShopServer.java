@@ -181,8 +181,8 @@ public class ShopServer {
             logger.debug("provinces --> " + json);
             wsWxShopInfoExtends = JSON.parseArray(json, WsWxShopInfoExtend.class);
         }
-        AxisResult<List<WsWxShopInfoExtend>> shopIdLists = AxisResult.create(code, msg, wsWxShopInfoExtends);
-        return shopIdLists;
+        AxisResult<List<WsWxShopInfoExtend>> wsWxShopInfoExtendList = AxisResult.create(code, msg, wsWxShopInfoExtends);
+        return wsWxShopInfoExtendList;
     }
 
 }
