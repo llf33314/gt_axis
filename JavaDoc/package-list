@@ -1,0 +1,14 @@
+com.gt.axis.bean.wxmp.address
+com.gt.axis.bean.wxmp.applet
+com.gt.axis.bean.wxmp.bus
+com.gt.axis.bean.wxmp.child
+com.gt.axis.bean.wxmp.dict
+com.gt.axis.bean.wxmp.erp
+com.gt.axis.bean.wxmp.mq
+com.gt.axis.bean.wxmp.shop
+com.gt.axis.bean.wxmp.sms
+com.gt.axis.bean.wxmp.socket
+com.gt.axis.bean.wxmp.staff
+com.gt.axis.bean.wxmp.video
+com.gt.axis.content
+com.gt.axis.server.wxmp
