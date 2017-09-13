@@ -4,10 +4,11 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.gt.api.util.HttpClienUtils;
 import com.gt.api.util.RequestUtils;
+import com.gt.api.util.sign.SignHttpUtils;
+import com.gt.axis.bean.wxmp.address.*;
 import com.gt.axis.content.AxisContent;
 import com.gt.axis.content.AxisResult;
 import org.apache.log4j.Logger;
-import com.gt.axis.bean.wxmp.address.CityRes;
 
 import java.util.List;
 import java.util.Map;
@@ -147,6 +148,104 @@ public class AddressServer {
             listProvinceRes = JSON.parseArray(json, CityRes.class);
         }
         AxisResult<List<CityRes>> axisResult = AxisResult.create(code, msg, listProvinceRes);
+        return axisResult;
+    }
+
+    /**
+     * 根据粉丝ID查询默认地址
+     * @param memberAdsReq
+     * @return
+     */
+    public static AxisResult<MemberAdsRes> addressDefault(MemberAdsReq memberAdsReq) throws Exception{
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/fanAddress/addressDefault.do";
+        String signKey = AxisContent.getInstance().getWxmpSignKey();
+        String result = SignHttpUtils.WxmppostByHttp(url, memberAdsReq, signKey);
+        Map resMap = JSON.parseObject(result, Map.class);
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        MemberAdsRes memberAdsRes = null;
+        if (resMap.get("data") != null){
+            String json = resMap.get("data").toString();
+            logger.debug("provinces --> " + json);
+            memberAdsRes = JSON.parseObject(json, MemberAdsRes.class);
+        }
+        AxisResult<MemberAdsRes> axisResult = AxisResult.create(code, msg, memberAdsRes);
+        return axisResult;
+    }
+
+    /**
+     * 根据粉丝地址ID查询默认地址
+     * @param addressReq
+     * @return
+     */
+    public static AxisResult<MemberAdsRes> addreSelectId(AddressReq addressReq) throws Exception{
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/fanAddress/addreSelectId.do";
+        String signKey = AxisContent.getInstance().getWxmpSignKey();
+        String result = SignHttpUtils.WxmppostByHttp(url, addressReq, signKey);
+        Map resMap = JSON.parseObject(result, Map.class);
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        MemberAdsRes memberAdsRes = null;
+        if (resMap.get("data") != null){
+            String json = resMap.get("data").toString();
+            logger.debug("provinces --> " + json);
+            memberAdsRes = JSON.parseObject(json, MemberAdsRes.class);
+        }
+        AxisResult<MemberAdsRes> axisResult = AxisResult.create(code, msg, memberAdsRes);
+        return axisResult;
+    }
+
+    /**
+     * 根据粉丝memberids查询所有的地址
+     * @param memberAdsReq
+     * @return
+     */
+    public static AxisResult<List<MemberAdsRes>> addressList(MemberAdsReq memberAdsReq) throws Exception{
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/fanAddress/addressList.do";
+        String signKey = AxisContent.getInstance().getWxmpSignKey();
+        String result = SignHttpUtils.WxmppostByHttp(url, memberAdsReq, signKey);
+        Map resMap = JSON.parseObject(result, Map.class);
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        List<MemberAdsRes> memberAdsResList = null;
+        if (resMap.get("data") != null){
+            String json = resMap.get("data").toString();
+            logger.debug("provinces --> " + json);
+            memberAdsResList = JSON.parseArray(json, MemberAdsRes.class);
+        }
+        AxisResult<List<MemberAdsRes>> axisResult = AxisResult.create(code, msg, memberAdsResList);
+        return axisResult;
+    }
+
+    /**
+     * 添加/修改粉丝地址
+     * @param addAddressReq
+     * @return
+     */
+    public static AxisResult addOrUpdateAddre(AddAddressReq addAddressReq) throws Exception{
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/fanAddress/AddOrUpdateAddre.do";
+        String signKey = AxisContent.getInstance().getWxmpSignKey();
+        String result = SignHttpUtils.WxmppostByHttp(url, addAddressReq, signKey);
+        Map resMap = JSON.parseObject(result, Map.class);
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        AxisResult axisResult = AxisResult.create(code, msg, null);
+        return axisResult;
+    }
+
+    /**
+     * 把地址ID改为默认地址
+     * @param addressReq
+     * @return
+     */
+    public static AxisResult updateDefault(AddressReq addressReq) throws Exception{
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/fanAddress/updateDefault.do";
+        String signKey = AxisContent.getInstance().getWxmpSignKey();
+        String result = SignHttpUtils.WxmppostByHttp(url, addressReq, signKey);
+        Map resMap = JSON.parseObject(result, Map.class);
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        AxisResult axisResult = AxisResult.create(code, msg, null);
         return axisResult;
     }
 

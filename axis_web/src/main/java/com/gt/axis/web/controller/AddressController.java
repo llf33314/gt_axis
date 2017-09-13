@@ -1,7 +1,10 @@
 package com.gt.axis.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.gt.axis.bean.wxmp.address.AddressReq;
 import com.gt.axis.bean.wxmp.address.CityRes;
+import com.gt.axis.bean.wxmp.address.MemberAdsReq;
+import com.gt.axis.bean.wxmp.address.MemberAdsRes;
 import com.gt.axis.content.AxisResult;
 import com.gt.axis.server.wxmp.AddressServer;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +49,30 @@ public class AddressController {
     public String listCityByNames(){
         String names = "广东省";
         AxisResult<List<CityRes>> axisResult = AddressServer.listCityByName(names);
+        return JSONObject.toJSONString(axisResult);
+    }
+
+    @RequestMapping(value = "/addressDefault")
+    public String addressDefault() throws Exception{
+        MemberAdsReq memberAdsReq = new MemberAdsReq();
+        memberAdsReq.setMemberids("1225352,1225358,1225449");
+        AxisResult<MemberAdsRes> axisResult = AddressServer.addressDefault(memberAdsReq);
+        return JSONObject.toJSONString(axisResult);
+    }
+
+    @RequestMapping(value = "/addreSelectId")
+    public String addreSelectId() throws Exception{
+        AddressReq addressReq = new AddressReq();
+        addressReq.setAddid(146);
+        AxisResult<MemberAdsRes> axisResult = AddressServer.addreSelectId(addressReq);
+        return JSONObject.toJSONString(axisResult);
+    }
+
+    @RequestMapping(value = "/addressList")
+    public String addressList() throws Exception{
+        MemberAdsReq memberAdsReq = new MemberAdsReq();
+        memberAdsReq.setMemberids("1225352,1225358,1225449");
+        AxisResult<List<MemberAdsRes>> axisResult = AddressServer.addressList(memberAdsReq);
         return JSONObject.toJSONString(axisResult);
     }
 
