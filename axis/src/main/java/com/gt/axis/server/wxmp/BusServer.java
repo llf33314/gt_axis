@@ -26,7 +26,7 @@ public class BusServer {
      * @return
      * @throws Exception
      */
-    public static AxisResult getBusUserApi(BusUserApiReq busUserApiReq) throws Exception{
+    public static AxisResult<BusUser> getBusUserApi(BusUserApiReq busUserApiReq) throws Exception{
         String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/busUserApi/getBusUserApi.do";
         String signKey = AxisContent.getInstance().getWxmpSignKey();
         String result = SignHttpUtils.WxmppostByHttp(url, busUserApiReq, signKey);
