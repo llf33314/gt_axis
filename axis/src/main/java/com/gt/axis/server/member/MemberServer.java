@@ -8,6 +8,7 @@ import com.gt.axis.content.AxisContent;
 import com.gt.axis.content.AxisResult;
 import org.apache.log4j.Logger;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,21 +25,24 @@ public class MemberServer {
      * @return
      * @throws Exception
      */
-    public static AxisResult<MemberRes> findMemberByIds(MemberReq memberReq) throws Exception{
+    public static AxisResult<List<MemberRes>> findMemberByIds(MemberReq memberReq) throws Exception{
         String url = AxisContent.getInstance().getMemberUrl() + "memberAPI/member/findMemberByIds";
         String signKey = AxisContent.getInstance().getMemberSignKey();
         String result = SignHttpUtils.postByHttp(url, memberReq, signKey);
 
         Map resMap = JSON.parseObject(result, Map.class);
         int code = (int) resMap.get("code");
-        String msg = resMap.get("msg").toString();
-        MemberRes memberRes = null;
+        String msg = null;
+        if (resMap.get("msg") != null){
+            msg = resMap.get("msg").toString();
+        }
+        List<MemberRes> memberResList = null;
         if (resMap.get("data") != null){
             String json = resMap.get("data").toString();
             logger.debug("provinces --> " + json);
-            memberRes = JSON.parseObject(json, MemberRes.class);
+            memberResList = JSON.parseObject(json, List.class);
         }
-        AxisResult<MemberRes> axisResult = AxisResult.create(code, msg, memberRes);
+        AxisResult<List<MemberRes>> axisResult = AxisResult.create(code, msg, memberResList);
         return axisResult;
     }
 
