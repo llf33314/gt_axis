@@ -22,6 +22,8 @@ public class AxisConfig {
         AxisContent axisContent = AxisContent.getInstance();
         axisContent.setWxmpSignKey(axisProperties.getWxmpSignKey());
         axisContent.setWxmpUrl(axisProperties.getWxmpUrl());
+        axisContent.setMemberSignKey(axisProperties.getMemberSignKey());
+        axisContent.setMemberUrl(axisProperties.getMemberUrl());
         return axisContent;
     }
 

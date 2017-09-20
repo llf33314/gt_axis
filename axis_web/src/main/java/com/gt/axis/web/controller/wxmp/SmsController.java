@@ -1,4 +1,4 @@
-package com.gt.axis.web.controller;
+package com.gt.axis.web.controller.wxmp;
 
 import com.alibaba.fastjson.JSONObject;
 import com.gt.axis.content.AxisResult;

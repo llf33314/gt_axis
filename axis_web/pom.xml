@@ -5,7 +5,7 @@
 
 	<groupId>com.gt.axis.web</groupId>
 	<artifactId>axis_web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>axis_web</name>
@@ -32,8 +32,8 @@
 
 		<dependency>
 			<groupId>com.gt.axis</groupId>
-			<artifactId>axis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>gt_axis</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 
 		<!-- @Configuration注解建议引入 -->

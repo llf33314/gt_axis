@@ -1,4 +1,4 @@
-package com.gt.axis.web.controller;
+package com.gt.axis.web.controller.wxmp;
 
 import com.alibaba.fastjson.JSONObject;
 import com.gt.axis.bean.wxmp.address.AddressReq;
@@ -21,7 +21,13 @@ public class AddressController {
 
     @RequestMapping(value = "/listCityByLevel")
     public String listCityByLevel(){
-        AxisResult<List<CityRes>> axisResult = AddressServer.listCityByLevel(1);
+        AxisResult<List<CityRes>> axisResult = AddressServer.listCityByLevel(2);
+        return JSONObject.toJSONString(axisResult);
+    }
+
+    @RequestMapping(value = "/listCityByLevel1")
+    public String listCityByLevel(int level){
+        AxisResult<List<CityRes>> axisResult = AddressServer.listCityByLevel(level);
         return JSONObject.toJSONString(axisResult);
     }
 

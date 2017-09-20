@@ -1,6 +1,7 @@
-package com.gt.axis.web.controller;
+package com.gt.axis.web.controller.wxmp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.gt.axis.bean.wxmp.bus.BusUser;
 import com.gt.axis.bean.wxmp.bus.BusUserApiReq;
 import com.gt.axis.bean.wxmp.bus.ErpCountReq;
 import com.gt.axis.bean.wxmp.bus.ErpCountRes;
@@ -20,7 +21,7 @@ public class BusController {
     public String getBusUserApi() throws Exception{
         BusUserApiReq busUserApiReq = new BusUserApiReq();
         busUserApiReq.setUserId(42);
-        AxisResult<ErpCountRes> axisResult = BusServer.getBusUserApi(busUserApiReq);
+        AxisResult<BusUser> axisResult = BusServer.getBusUserApi(busUserApiReq);
         return JSONObject.toJSONString(axisResult);
     }
 
