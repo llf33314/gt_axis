@@ -30,6 +30,9 @@ public class AxisContent {
     private String wxmpSignKey; // wxmp 签名密钥
     private String wxmpUrl; // wxmp 请求地址
 
+    private String memberSignKey; // member 签名密钥
+    private String memberUrl; // member 请求地址
+
     /* getter and setter */
 
     /**
@@ -62,5 +65,37 @@ public class AxisContent {
      */
     public void setWxmpUrl(String wxmpUrl) {
         this.wxmpUrl = wxmpUrl;
+    }
+
+    /**
+     * member 签名密钥
+     * @return
+     */
+    public String getMemberSignKey() {
+        return memberSignKey;
+    }
+
+    /**
+     * member 签名密钥
+     * @param memberSignKey
+     */
+    public void setMemberSignKey(String memberSignKey) {
+        this.memberSignKey = memberSignKey;
+    }
+
+    /**
+     * member 请求地址
+     * @return
+     */
+    public String getMemberUrl() {
+        return memberUrl;
+    }
+
+    /**
+     * member 请求地址
+     * @param memberUrl
+     */
+    public void setMemberUrl(String memberUrl) {
+        this.memberUrl = memberUrl;
     }
 }
