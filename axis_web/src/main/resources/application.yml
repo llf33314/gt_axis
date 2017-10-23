@@ -1,6 +1,8 @@
 gt:
   axis:
-    wxmpUrl: http://hz1.yifriend.net/
+    wxmpUrl: https://deeptel.com.cn/
     wxmpSignKey: WXMP2017
     memberSignKey: MV8MMFQUMU1HJ6F2GNH40ZFJJ7Q8LNVM
     memberUrl: http://member.yifriend.net/
+server:
+  port: 9090

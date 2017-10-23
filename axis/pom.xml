@@ -5,7 +5,7 @@
 
 	<groupId>com.gt.axis</groupId>
 	<artifactId>gt_axis</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>gt_axis</name>
@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>com.gt.api</groupId>
 			<artifactId>gt_api</artifactId>
-			<version>1.3.7-SNAPSHOT</version>
+			<version>1.3.11-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>
