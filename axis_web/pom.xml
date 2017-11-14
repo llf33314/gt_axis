@@ -33,8 +33,9 @@
 		<dependency>
 			<groupId>com.gt.axis</groupId>
 			<artifactId>gt_axis</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
+			<version>0.0.4-SNAPSHOT</version>
 		</dependency>
+
 
 		<!-- @Configuration注解建议引入 -->
 		<dependency>
