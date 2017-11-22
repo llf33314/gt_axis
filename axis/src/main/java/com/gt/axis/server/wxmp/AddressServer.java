@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class AddressServer {
 
-    private static Logger logger = Logger.getLogger(SmsServer.class);
+    private static Logger logger = Logger.getLogger(AddressServer.class);
 
     /**
      * 根据等级获取城市信息
