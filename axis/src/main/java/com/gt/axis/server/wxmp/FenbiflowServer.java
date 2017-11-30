@@ -122,6 +122,24 @@ public class FenbiflowServer {
     }
 
     /**
+     * 修改商家冻结数量
+     * @return
+     */
+    public static AxisResult updaterecUseCountVer2(UpdateFenbiReduceReq updateFenbiReduceReq){
+        RequestUtils<UpdateFenbiReduceReq> reqRequestUtils = new RequestUtils<>();
+        reqRequestUtils.setReqdata(updateFenbiReduceReq);
+        String messsageJson = JSONObject.toJSONString(reqRequestUtils);
+        logger.debug("param --> " + messsageJson);
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/fenbiflow/6F6D9AD2/79B4DE7C/updaterecUseCountVer2.do";
+        logger.debug("url --> " + url);
+        Map<String, Object> resMap = HttpClienUtils.reqPostUTF8(messsageJson, url, Map.class, AxisContent.getInstance().getWxmpSignKey());
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        AxisResult axisResult = AxisResult.create(code, msg,null);
+        return axisResult;
+    }
+
+    /**
      *  根据商家id获取商家流量
      * @param busId
      * @return

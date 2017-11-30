@@ -8,6 +8,7 @@ import com.gt.axis.content.AxisContent;
 import com.gt.axis.content.AxisResult;
 import org.apache.log4j.Logger;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,8 +29,10 @@ public class MemberServer {
     public static AxisResult<List<MemberRes>> findMemberByIds(MemberReq memberReq) throws Exception{
         String url = AxisContent.getInstance().getMemberUrl() + "memberAPI/member/findMemberByIds";
         String signKey = AxisContent.getInstance().getMemberSignKey();
-        String result = SignHttpUtils.postByHttp(url, memberReq, signKey);
-
+        Map<String,Object> params = new HashMap<>();
+        params.put("busId",memberReq.getBusId());
+        params.put("ids",memberReq.getIds());
+        String result = SignHttpUtils.WxmppostByHttp(url, params, signKey);
         Map resMap = JSON.parseObject(result, Map.class);
         int code = (int) resMap.get("code");
         String msg = null;
