@@ -8,7 +8,17 @@ public class MemberRes {
 
     private Integer id; // memberid
     private String nickname; // 昵称
+    private String phone; // 昵称
     private String headimgurl; // 头像链接
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     /**
      * memberid

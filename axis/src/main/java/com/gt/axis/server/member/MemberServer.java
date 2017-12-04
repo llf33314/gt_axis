@@ -8,6 +8,7 @@ import com.gt.axis.content.AxisContent;
 import com.gt.axis.content.AxisResult;
 import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,13 +40,22 @@ public class MemberServer {
         if (resMap.get("msg") != null){
             msg = resMap.get("msg").toString();
         }
-        List<MemberRes> memberResList = null;
+        List<Map<String,Object>> memberResList = null;
         if (resMap.get("data") != null){
             String json = resMap.get("data").toString();
             logger.debug("provinces --> " + json);
             memberResList = JSON.parseObject(json, List.class);
         }
-        AxisResult<List<MemberRes>> axisResult = AxisResult.create(code, msg, memberResList);
+        List<MemberRes> memberResList1 = new ArrayList<>();
+        for (Map<String,Object> map : memberResList){
+            MemberRes memberRes = new MemberRes();
+            memberRes.setPhone(map.get("phone") != null ? map.get("phone").toString():"");
+            memberRes.setNickname(map.get("nickname") != null ? map.get("nickname").toString():"");
+            memberRes.setId(Integer.parseInt(map.get("id").toString()));
+            memberRes.setHeadimgurl(map.get("headimgurl") != null ? map.get("headimgurl").toString():"");
+            memberResList1.add(memberRes);
+        }
+        AxisResult<List<MemberRes>> axisResult = AxisResult.create(code, msg, memberResList1);
         return axisResult;
     }
 
