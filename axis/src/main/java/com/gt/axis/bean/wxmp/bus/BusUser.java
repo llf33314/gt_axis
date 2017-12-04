@@ -13,6 +13,8 @@ public class BusUser {
 
     private Integer id; // 商家ID
 
+    private String name; // 商家名称
+
     private String password; // 密码里面是null
 
     private String email; // 邮箱
@@ -94,6 +96,14 @@ public class BusUser {
      */
     public Integer getId() {
         return id;
+    }
+
+    /**
+     * 商家名称
+     * @return
+     */
+    public String getName() {
+        return name;
     }
 
     /**
@@ -494,5 +504,9 @@ public class BusUser {
 
     public void setWzAuth(Integer wzAuth) {
         this.wzAuth = wzAuth;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
