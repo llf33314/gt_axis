@@ -13,6 +13,8 @@ public class BusUser {
 
     private Integer id; // 商家ID
 
+    private String name; // 商家名称
+
     private String password; // 密码里面是null
 
     private String email; // 邮箱
@@ -25,7 +27,7 @@ public class BusUser {
 
     private String recentIp; // 最近登录ip
 
-    private BigDecimal fans_currency; // 粉币
+    private BigDecimal fansCurrency; // 粉币
 
     private Integer level; // 会员等级
 
@@ -97,6 +99,14 @@ public class BusUser {
     }
 
     /**
+     * 商家名称
+     * @return
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
      * 密码里面是null
      * @return
      */
@@ -148,8 +158,8 @@ public class BusUser {
      * 粉币
      * @return
      */
-    public BigDecimal getFans_currency() {
-        return fans_currency;
+    public BigDecimal getFansCurrency() {
+        return fansCurrency;
     }
 
     /**
@@ -388,8 +398,8 @@ public class BusUser {
         this.recentIp = recentIp;
     }
 
-    public void setFans_currency(BigDecimal fans_currency) {
-        this.fans_currency = fans_currency;
+    public void setFansCurrency(BigDecimal fansCurrency) {
+        this.fansCurrency = fansCurrency;
     }
 
     public void setLevel(Integer level) {
@@ -494,5 +504,9 @@ public class BusUser {
 
     public void setWzAuth(Integer wzAuth) {
         this.wzAuth = wzAuth;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
