@@ -14,7 +14,26 @@ public class AxisProperties {
     private String memberSignKey; // member 签名密钥
     private String memberUrl; // member 请求地址
 
-    /* getter and setter */
+    private String signKey;//获取短连接密钥
+
+    private String serviceUrl;//短连接请求地址
+
+    public String getSignKey() {
+        return signKey;
+    }
+
+    public void setSignKey(String signKey) {
+        this.signKey = signKey;
+    }
+
+    public String getServiceUrl() {
+        return serviceUrl;
+    }
+
+    public void setServiceUrl(String serviceUrl) {
+        this.serviceUrl = serviceUrl;
+    }
+/* getter and setter */
 
     /**
      * member 签名密钥
