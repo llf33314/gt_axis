@@ -4,7 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.gt.api.util.HttpClienUtils;
 import com.gt.api.util.RequestUtils;
-import com.gt.axis.bean.wxmp.address.CityRes;
+import com.gt.axis.bean.wxmp.applet.MsgTemplateRes;
+import com.gt.axis.bean.wxmp.applet.SendWxMsgTemplateReq;
 import com.gt.axis.bean.wxmp.applet.WxPublicUser;
 import com.gt.axis.content.AxisContent;
 import com.gt.axis.content.AxisResult;
@@ -93,6 +94,49 @@ public class AppletServer {
              wxPublicUser = JSON.parseObject(json, WxPublicUser.class);
         }
         AxisResult<WxPublicUser> axisResult = AxisResult.create(code, msg, wxPublicUser);
+        return axisResult;
+    }
+
+    /**
+     *  获取消息模板列表
+     * @param busId 商家id
+     * @return
+     */
+    public static AxisResult<List<MsgTemplateRes>> selectTempObjByBusId(Integer busId){
+        RequestUtils<Integer> reqRequestUtils = new RequestUtils<>();
+        reqRequestUtils.setReqdata(busId);
+        String messsageJson = JSONObject.toJSONString(reqRequestUtils);
+        logger.debug("param --> " + messsageJson);
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/wxpublicapi/6F6D9AD2/79B4DE7C/selectTempObjByBusId.do";
+        logger.debug("url --> " + url);
+        Map<String, Object> resMap = HttpClienUtils.reqPostUTF8(messsageJson, url, Map.class, AxisContent.getInstance().getWxmpSignKey());
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        List<MsgTemplateRes> msgTemplates = null;
+        if (resMap.get("data") != null){
+            String json = resMap.get("data").toString();
+            logger.debug("provinces --> " + json);
+            msgTemplates = JSON.parseArray(json, MsgTemplateRes.class);
+        }
+        AxisResult<List<MsgTemplateRes>> axisResult = AxisResult.create(code, msg, msgTemplates);
+        return axisResult;
+    }
+    /**
+     *  发送模板消息
+     * @param sendWxMsgTemplateReq 请求业务参数
+     * @return
+     */
+    public static AxisResult sendWxMsgTemplate(SendWxMsgTemplateReq sendWxMsgTemplateReq){
+        RequestUtils<SendWxMsgTemplateReq> reqRequestUtils = new RequestUtils<>();
+        reqRequestUtils.setReqdata(sendWxMsgTemplateReq);
+        String messsageJson = JSONObject.toJSONString(reqRequestUtils);
+        logger.debug("param --> " + messsageJson);
+        String url = AxisContent.getInstance().getWxmpUrl() + "8A5DA52E/wxpublicapi/6F6D9AD2/79B4DE7C/sendWxMsgTemplate.do";
+        logger.debug("url --> " + url);
+        Map<String, Object> resMap = HttpClienUtils.reqPostUTF8(messsageJson, url, Map.class, AxisContent.getInstance().getWxmpSignKey());
+        int code = (int) resMap.get("code");
+        String msg = resMap.get("msg").toString();
+        AxisResult axisResult = AxisResult.create(code, msg,null);
         return axisResult;
     }
 
