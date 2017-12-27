@@ -6,6 +6,8 @@ import com.gt.api.exception.SignException;
 import com.gt.axis.bean.wxmp.fenbiflow.*;
 import com.gt.axis.content.AxisResult;
 import com.gt.axis.server.wxmp.FenbiflowServer;
+import com.gt.axis.web.AxisWebApplication;
+import org.springframework.boot.SpringApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,8 +25,8 @@ public class FenbiflowController {
     public String getFenbiSurplus() throws SignException {
         FenbiSurplus fenbiSurplus = new FenbiSurplus();
         fenbiSurplus.setBusId(33);
-        fenbiSurplus.setFkId(1);
-        fenbiSurplus.setFre_type(1);
+        fenbiSurplus.setFkId(418);
+        fenbiSurplus.setFre_type(36);
         fenbiSurplus.setRec_type(1);
         AxisResult<FenBiCount> axisResult = FenbiflowServer.getFenbiSurplus(fenbiSurplus);
         return JSONObject.toJSONString(axisResult);
@@ -44,15 +46,15 @@ public class FenbiflowController {
     @RequestMapping(value = "/saveFenbiFlowRecord")
     public String saveFenbiFlowRecord(){
         FenbiFlowRecordReq fenbiFlowRecordReq = new FenbiFlowRecordReq();
-        fenbiFlowRecordReq.setBusUserId(1);
-        fenbiFlowRecordReq.setFlowId(1);
-        fenbiFlowRecordReq.setFlowType(1);
-        fenbiFlowRecordReq.setRecCount(11.0);
-        fenbiFlowRecordReq.setRecDesc("22");
+        fenbiFlowRecordReq.setBusUserId(33);
+        fenbiFlowRecordReq.setFlowId(0);
+        fenbiFlowRecordReq.setFlowType(0);
+        fenbiFlowRecordReq.setRecCount(11.1);
+        fenbiFlowRecordReq.setRecDesc("扫码签到活动支出");
         fenbiFlowRecordReq.setRecFkId(1);
-        fenbiFlowRecordReq.setRecFreezeType(1);
+        fenbiFlowRecordReq.setRecFreezeType(36);
         fenbiFlowRecordReq.setRecType(1);
-        fenbiFlowRecordReq.setRecUseCount(33.0);
+        fenbiFlowRecordReq.setRecUseCount(0.1);
         fenbiFlowRecordReq.setRollStatus(1);
         AxisResult axisResult = FenbiflowServer.saveFenbiFlowRecord(fenbiFlowRecordReq);
         return JSONObject.toJSONString(axisResult);

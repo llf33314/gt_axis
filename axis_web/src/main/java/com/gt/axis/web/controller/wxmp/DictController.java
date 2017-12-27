@@ -22,7 +22,7 @@ public class DictController {
     @RequestMapping(value = "/getDictApi")
     public String getDictApi() throws Exception{
         DictApiReq dictApiReq = new DictApiReq();
-        dictApiReq.setStyle("1019");
+        dictApiReq.setStyle("1008");
         AxisResult<List<DictApiRes>> axisResult = DictServer.getDictApi(dictApiReq);
         return JSONObject.toJSONString(axisResult);
     }
@@ -30,9 +30,9 @@ public class DictController {
     @RequestMapping(value = "/getDictBusNum")
     public String getDictBusNum() throws Exception{
         DictBusReq dictBusReq = new DictBusReq();
-        dictBusReq.setUserId(42);
-        dictBusReq.setDictstyle("1106");
-        dictBusReq.setModelStyle(1);
+        dictBusReq.setUserId(33);
+        dictBusReq.setDictstyle("1008");
+        dictBusReq.setModelStyle(0);
         AxisResult<DictBusRes> axisResult = DictServer.getDiBserNum(dictBusReq);
         return JSONObject.toJSONString(axisResult);
     }

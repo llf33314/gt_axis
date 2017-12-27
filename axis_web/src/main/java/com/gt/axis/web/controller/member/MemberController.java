@@ -17,8 +17,8 @@ public class MemberController {
     @RequestMapping(value = "/findMemberByIds")
     public String findMemberByIds() throws Exception{
         MemberReq memberReq = new MemberReq();
-        memberReq.setBusId(42);
-        memberReq.setIds("1225643");
+        memberReq.setBusId(33);
+        memberReq.setIds("1014,998,1014,998,1014,998,4344,155,453");
         AxisResult axisResult = MemberServer.findMemberByIds(memberReq);
         return JSONObject.toJSONString(axisResult);
     }

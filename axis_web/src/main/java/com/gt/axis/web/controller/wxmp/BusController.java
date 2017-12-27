@@ -20,7 +20,7 @@ public class BusController {
     @RequestMapping(value = "/getBusUserApi")
     public String getBusUserApi() throws Exception{
         BusUserApiReq busUserApiReq = new BusUserApiReq();
-        busUserApiReq.setUserId(42);
+        busUserApiReq.setUserId(33);
         AxisResult<BusUser> axisResult = BusServer.getBusUserApi(busUserApiReq);
         return JSONObject.toJSONString(axisResult);
     }
@@ -28,7 +28,7 @@ public class BusController {
     @RequestMapping(value = "/getIsErpCount")
     public String getIsErpCount() throws Exception{
         ErpCountReq erpCountReq = new ErpCountReq();
-        erpCountReq.setUserId(42);
+        erpCountReq.setUserId(33);
         erpCountReq.setModelstyle("1");
         AxisResult<ErpCountRes> axisResult = BusServer.getIsErpCount(erpCountReq);
         return JSONObject.toJSONString(axisResult);
