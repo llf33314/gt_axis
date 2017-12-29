@@ -26,17 +26,17 @@ public class MaterialController {
     @RequestMapping(value = "/searchMaterialList")
     public String searchMaterialList() throws Exception{
         SearchMaterialReq searchMaterialReq = new SearchMaterialReq();
-        searchMaterialReq.setPublicId(494);
-        searchMaterialReq.setSearch("");
-        searchMaterialReq.setType(2);
+        searchMaterialReq.setPublicId(492);
+        searchMaterialReq.setSearch("凉拌羊肉");
+        searchMaterialReq.setType(3);
         AxisResult<List<MateralWrapRes>> axisResult = MaterialServer.searchMaterialList(searchMaterialReq);
         return JSONObject.toJSONString(axisResult);
     }
     @RequestMapping(value = "/searchMaterialList3")
     public String searchMaterialList3() throws Exception{
         SearchMaterialReq searchMaterialReq = new SearchMaterialReq();
-        searchMaterialReq.setPublicId(494);
-        searchMaterialReq.setSearch("");
+        searchMaterialReq.setPublicId(492);
+        searchMaterialReq.setSearch("微场");
         searchMaterialReq.setType(3);
         AxisResult<List<MateralWrapRes>> axisResult = MaterialServer.searchMaterialList(searchMaterialReq);
         return JSONObject.toJSONString(axisResult);

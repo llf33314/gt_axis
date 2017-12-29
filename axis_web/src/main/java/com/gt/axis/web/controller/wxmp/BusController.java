@@ -1,7 +1,7 @@
 package com.gt.axis.web.controller.wxmp;
 
 import com.alibaba.fastjson.JSONObject;
-import com.gt.axis.bean.wxmp.bus.BusUser;
+import com.gt.api.bean.session.BusUser;
 import com.gt.axis.bean.wxmp.bus.BusUserApiReq;
 import com.gt.axis.bean.wxmp.bus.ErpCountReq;
 import com.gt.axis.bean.wxmp.bus.ErpCountRes;

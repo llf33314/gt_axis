@@ -1,8 +1,8 @@
 package com.gt.axis.server.wxmp;
 
 import com.alibaba.fastjson.JSON;
+import com.gt.api.bean.session.BusUser;
 import com.gt.api.util.sign.SignHttpUtils;
-import com.gt.axis.bean.wxmp.bus.BusUser;
 import com.gt.axis.bean.wxmp.bus.BusUserApiReq;
 import com.gt.axis.bean.wxmp.bus.ErpCountReq;
 import com.gt.axis.bean.wxmp.bus.ErpCountRes;
