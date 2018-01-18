@@ -17,10 +17,10 @@ public class SmsController {
     @RequestMapping(value = "/send")
     public String sendSms(){
         SendSmsReq sendSmsReq = new SendSmsReq();
-        sendSmsReq.setBusId(42);
+        sendSmsReq.setBusId(33);
         sendSmsReq.setCompany("多粉");
         sendSmsReq.setContent("Hello world!");
-        sendSmsReq.setMobiles("13632374547");
+        sendSmsReq.setMobiles("13414621797");
         sendSmsReq.setModel(1);
         AxisResult axisResult = SmsServer.sendSms(sendSmsReq);
         return JSONObject.toJSONString(axisResult);

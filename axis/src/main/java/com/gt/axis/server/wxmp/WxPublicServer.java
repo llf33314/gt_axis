@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.gt.api.util.HttpClienUtils;
 import com.gt.api.util.RequestUtils;
 import com.gt.axis.bean.wxmp.wxpublic.*;
+import com.gt.api.bean.session.WxPublicUsers;
 import com.gt.axis.content.AxisContent;
 import com.gt.axis.content.AxisResult;
 import org.apache.log4j.Logger;

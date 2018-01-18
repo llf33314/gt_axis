@@ -103,6 +103,18 @@ public class FenbiflowController {
         return JSONObject.toJSONString(axisResult);
     }
 
-
+    @RequestMapping(value = "/updaterecUseCountVer2")
+    public String updaterecUseCountVer2() throws Exception{
+        UpdateFenbiReduceReq updateFenbiReduceReq = new UpdateFenbiReduceReq();
+        updateFenbiReduceReq.setBusId(33);
+        updateFenbiReduceReq.setFkId(55);
+        updateFenbiReduceReq.setFreType(41);
+        updateFenbiReduceReq.setCount(20.1);
+        if(-211<-11){
+           System.out.println("======");
+        }
+        AxisResult axisResult = FenbiflowServer.updaterecUseCountVer2(updateFenbiReduceReq);
+        return JSONObject.toJSONString(axisResult);
+    }
 }
 

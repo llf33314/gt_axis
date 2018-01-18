@@ -1,12 +1,8 @@
 package com.gt.axis.web.controller.wxmp;
 
 import com.alibaba.fastjson.JSONObject;
-import com.gt.axis.bean.wxmp.material.MateralRes;
-import com.gt.axis.bean.wxmp.material.MateralWrapRes;
-import com.gt.axis.bean.wxmp.material.SearchMaterialReq;
 import com.gt.axis.bean.wxmp.wxpublic.*;
 import com.gt.axis.content.AxisResult;
-import com.gt.axis.server.wxmp.MaterialServer;
 import com.gt.axis.server.wxmp.WxPublicServer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

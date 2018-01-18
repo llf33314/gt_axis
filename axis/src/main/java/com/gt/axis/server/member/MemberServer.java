@@ -46,14 +46,17 @@ public class MemberServer {
             logger.debug("provinces --> " + json);
             memberResList = JSON.parseObject(json, List.class);
         }
+
         List<MemberRes> memberResList1 = new ArrayList<>();
-        for (Map<String,Object> map : memberResList){
-            MemberRes memberRes = new MemberRes();
-            memberRes.setPhone(map.get("phone") != null ? map.get("phone").toString():"");
-            memberRes.setNickname(map.get("nickname") != null ? map.get("nickname").toString():"");
-            memberRes.setId(Integer.parseInt(map.get("id").toString()));
-            memberRes.setHeadimgurl(map.get("headimgurl") != null ? map.get("headimgurl").toString():"");
-            memberResList1.add(memberRes);
+        if(memberResList != null){
+            for (Map<String,Object> map : memberResList){
+                MemberRes memberRes = new MemberRes();
+                memberRes.setPhone(map.get("phone") != null ? map.get("phone").toString():"");
+                memberRes.setNickname(map.get("nickname") != null ? map.get("nickname").toString():"");
+                memberRes.setId(Integer.parseInt(map.get("id").toString()));
+                memberRes.setHeadimgurl(map.get("headimgurl") != null ? map.get("headimgurl").toString():"");
+                memberResList1.add(memberRes);
+            }
         }
         AxisResult<List<MemberRes>> axisResult = AxisResult.create(code, msg, memberResList1);
         return axisResult;
